@@ -19,6 +19,7 @@ class CreateConversationsTable extends Migration
             $table->longText('body');
             $table->integer('users')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('users')
                 ->references('id')

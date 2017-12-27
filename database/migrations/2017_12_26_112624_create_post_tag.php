@@ -17,6 +17,8 @@ class CreatePostTag extends Migration
             $table->increments('id');
             $table->integer('post_id')->unsigned();
             $table->integer('tag_id')->unsigned();
+            $table->timestamp('updated_on');
+            $table->softDeletes();
 
             $table->foreign('post_id')
                 ->references('id')

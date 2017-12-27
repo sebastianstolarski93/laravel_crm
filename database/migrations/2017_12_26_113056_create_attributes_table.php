@@ -20,6 +20,7 @@ class CreateAttributesTable extends Migration
             $table->string('type');
             $table->integer('post_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('post_id')
                 ->references('id')
