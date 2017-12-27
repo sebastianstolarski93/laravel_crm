@@ -17,11 +17,11 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->longText('body');
-            $table->integer('users_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('users_id')
+            $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
         });
